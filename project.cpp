@@ -9,6 +9,7 @@
 
 using namespace std;
 unsigned char image[SIZE][SIZE];
+unsigned char image2[SIZE][SIZE];
 unsigned char new_image[SIZE][SIZE];
 
 
@@ -33,6 +34,14 @@ void InvertImage() {
           image[i][j]=255-image[i][j];
    }
   }
+}
+void MergeImage() {
+  loadImage2 ();
+  for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j< SIZE; j++) {
+            image[i][j]=(image[i][j]+image2[i][j])/2;
+        }
+    }
 }
 void flip() {
  char axis;
@@ -109,6 +118,13 @@ void loadImage () {
    strcat (imageFileName, ".bmp");
    readGSBMP(imageFileName, image);
 }
+void loadImage2 () {
+   char imageFileName[100];
+   cout << "Enter the source image file name: ";
+   cin >> imageFileName;
+   strcat (imageFileName, ".bmp");
+   readGSBMP(imageFileName, image2);
+}
 void choosefilter (){ 
 
     int filterNumber;
@@ -125,7 +141,7 @@ void choosefilter (){
   }
   else if (filterNumber == 3)
   {
-    /* code */
+    MergeImage();
   }
   else if (filterNumber == 4)
   {
