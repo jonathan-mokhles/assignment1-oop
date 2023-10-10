@@ -25,13 +25,22 @@ void black_white() {
     }
   }
 }
+void InvertImage() {
+  for (int i = 0; i < SIZE; i++)
+   {
+    for (int j = 0; j< SIZE; j++) 
+    {
+          image[i][j]=255-image[i][j];
+   }
+  }
+}
 void flip() {
-    char axis;
-   cout<<"\n h or v  \n";
-   cin>>axis;
+ char axis;
+ cout<<"\n h or v  \n";
+ cin>>axis;
 
-if (axis == 'h')
-{
+ if (axis == 'h')
+ {
     int temp;
   for (int i = 0; i < SIZE; i++) {
     for (int j = 0; j< SIZE/2; j++) {
@@ -40,9 +49,10 @@ if (axis == 'h')
         image[i][j]=image[i][256-j];
         image[i][256-j]=temp;
 
-    }
-  }
-}
+     }
+   }
+ }
+
    else if (axis == 'v'){
      int temp;
   for (int i = 0; i < SIZE/2; i++) {
@@ -56,13 +66,48 @@ if (axis == 'h')
   }
  }
 }
+void rotateimage(){
+  int number;
+  cout << "whate is type you want rotate it:  (90) ,(180) or (270)\n" ;
+  cin>>number;
+  
+  for (int i = 0; i < SIZE; i++) 
+        {
+            for (int j = 0; j< SIZE; j++) {
+               
+                if (number ==90)
+                    {
+                  new_image[255-j][255-i]=image[i][255-j]; 
+                    }
+                   else if (number ==180)
+                   {
+                    new_image [255-i][255-j]=image[i][j];
+                   }
+                    else if (number ==270)
+                    {
+                        new_image[255-j][i]=image[i][j];
+                    }
+
+
+}
+        }
+
+  for (int i = 0; i < SIZE; i++) 
+        {
+  for (int j = 0; j< SIZE; j++){
+   image[i][j]=new_image[i][j];
+        }
+    }
+}
+
+         
+
 void loadImage () {
    char imageFileName[100];
    cout << "Enter the source image file name: ";
    cin >> imageFileName;
    strcat (imageFileName, ".bmp");
    readGSBMP(imageFileName, image);
-
 }
 void choosefilter (){ 
 
@@ -76,15 +121,23 @@ void choosefilter (){
   }
   else if (filterNumber == 2)
   {
-    /* code */
+    InvertImage();
   }
-  else if (filterNumber == 2)
+  else if (filterNumber == 3)
   {
     /* code */
   }
   else if (filterNumber == 4)
   {
     flip();
+  }
+  else if (filterNumber == 5)
+  {
+    /* code */
+  }
+  else if (filterNumber == 6)
+  {
+    rotateimage();
   }
   else
   {
@@ -93,60 +146,13 @@ void choosefilter (){
   
   }
 void saveImage () {
-   char imageFileName[100]="test";
-//    cout << "Enter the target image file name: ";
-//    cin >> imageFileName;
+   char imageFileName[100];
+   cout << "Enter the target image file name: ";
+   cin >> imageFileName;
    strcat (imageFileName, ".bmp");
    writeGSBMP(imageFileName, image);
 }
-void saveimage(){
-  char imagefillename[100];
-   cout << "enter the target image fille name";
-   cin >> imagefillename;
 
-    strcat (imagefillename, ".bmp");
-
-
-
-}
-void InvertImage() 
-{
-  for (int i = 0; i < SIZE; i++)
-   {
-    for (int j = 0; j< SIZE; j++) 
-    {
-          image [i][j]=255-image [i][j];
-   }
-  }
-}
-void rotateimage()
-{
-  
-  
-  
-  int number;
-  cout << "whate is type you want rotate it: \n1_90\n2_180\n3_270" ;
-        for (int i = 0; i < SIZE; i++) 
-        {
-            for (int j = 0; j< SIZE; j++) {
-               
-                if (number ==1)
-                    {
-                  new_image[255-j][255-i]=image[i][255-j]; 
-                    }
-                   else if (number ==2)
-                   {
-                    new_image [255-i][255-j]=image[i][j];
-                   }
-                    else if (number ==3)
-                    {
-                        new_image[255-j][i]=image[i][j];
-                    }
-
-
-}
-        }
-}
  
 
 int main(){
