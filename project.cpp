@@ -1,7 +1,17 @@
-#include<iostream>
+//JONATHAN MOKHLES >> jonathanmokhles@gmail.com >> 20220100
+//AHMED RIZQ MOHAMED >> arizq9941@gmail.com >> 20210017
+//AHMED MOHAMED AHMED >> asadq265@gmail.com >> 20210029
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <cmath>
 #include "bmplib.cpp"
+
 using namespace std;
 unsigned char image[SIZE][SIZE];
+unsigned char new_image[SIZE][SIZE];
+
+
 
 void black_white() {
   for (int i = 0; i < SIZE; i++) {
@@ -89,7 +99,55 @@ void saveImage () {
    strcat (imageFileName, ".bmp");
    writeGSBMP(imageFileName, image);
 }
+void saveimage(){
+  char imagefillename[100];
+   cout << "enter the target image fille name";
+   cin >> imagefillename;
 
+    strcat (imagefillename, ".bmp");
+
+
+
+}
+void InvertImage() 
+{
+  for (int i = 0; i < SIZE; i++)
+   {
+    for (int j = 0; j< SIZE; j++) 
+    {
+          image [i][j]=255-image [i][j];
+   }
+  }
+}
+void rotateimage()
+{
+  
+  
+  
+  int number;
+  cout << "whate is type you want rotate it: \n1_90\n2_180\n3_270" ;
+        for (int i = 0; i < SIZE; i++) 
+        {
+            for (int j = 0; j< SIZE; j++) {
+               
+                if (number ==1)
+                    {
+                  new_image[255-j][255-i]=image[i][255-j]; 
+                    }
+                   else if (number ==2)
+                   {
+                    new_image [255-i][255-j]=image[i][j];
+                   }
+                    else if (number ==3)
+                    {
+                        new_image[255-j][i]=image[i][j];
+                    }
+
+
+}
+        }
+}
+ 
 
 int main(){
 
