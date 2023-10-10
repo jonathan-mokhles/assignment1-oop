@@ -145,7 +145,7 @@ void choosefilter (){
 
     int filterNumber;
     cout<<"Please select a filter to apply or 0 to exit:";
-    cout<<"\n1- Black & White Filter \n2- Invert Filter\n3- Merge Filter \n4- Flip Image\n5- Darken and Lighten Image \n6- Rotate Image \n7- Save the image to a file\n0- Exit\n";
+    cout<<"\n1- Black & White Filter \n2- Invert Filter\n3- Merge Filter \n4- Flip Image\n5- Rotate Image \n6- Darken and Lighten Image \n7- Save the image to a file\n0- Exit\n";
     cin>>filterNumber;
   if (filterNumber == 1)
   {
