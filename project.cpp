@@ -108,6 +108,22 @@ void rotateimage(){
         }
     }
 }
+DarkenandLighten(){
+  int filter;
+    cout << "If you want darker filter enter 1 \nIf you want lighter filter enter 2:  \n";
+    cin >>filter;
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j< SIZE; j++) {
+
+            if(filter==1 ){
+                image[i][j]=(image[i][j])/2;
+            }
+            else if(filter==2){
+                image[i][j]=(image[i][j]+255)/2;
+            }
+        }
+    }
+}
 
          
 
@@ -149,11 +165,11 @@ void choosefilter (){
   }
   else if (filterNumber == 5)
   {
-    /* code */
+    rotateimage();
   }
   else if (filterNumber == 6)
   {
-    rotateimage();
+    DarkenandLighten();
   }
   else
   {
