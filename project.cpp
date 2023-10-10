@@ -58,7 +58,7 @@ void choosefilter (){
 
     int filterNumber;
     cout<<"Please select a filter to apply or 0 to exit:";
-    cout<<"\n1- Black & White Filter \n2- Invert Filter\n3- Merge Filter \n4- Flip Image\n5- Darken and Lighten Image \n6- Rotate Image\n7- Detect Image Edges\n8- Enlarge Image\n9- Shrink Image\n10- Mirror 1/2 Image\n11- Shuffle Image\n12- Blur Image\n13- Crop Image\n14- Skew Image Right \n15- Skew Image Up \n16- Save the image to a file\n0- Exit\n";
+    cout<<"\n1- Black & White Filter \n2- Invert Filter\n3- Merge Filter \n4- Flip Image\n5- Darken and Lighten Image \n6- Rotate Image\n7- Detect Image Edges\n8- Enlarge Image\n9- Shrink Image \n16- Save the image to a file\n0- Exit\n";
     cin>>filterNumber;
   if (filterNumber == 1)
   {
