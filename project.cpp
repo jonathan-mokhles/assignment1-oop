@@ -1,6 +1,9 @@
+// FCAI – OOP Programming – 2023 - Assignment 1 
+
 //JONATHAN MOKHLES >> jonathanmokhles@gmail.com >> 20220100
 //AHMED RIZQ MOHAMED >> arizq9941@gmail.com >> 20210017
 //AHMED MOHAMED AHMED >> asadq265@gmail.com >> 20210029
+
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -8,11 +11,32 @@
 #include "bmplib.cpp"
 
 using namespace std;
+
 unsigned char image[SIZE][SIZE];
 unsigned char image2[SIZE][SIZE];
 unsigned char new_image[SIZE][SIZE];
 
-
+void loadImage () {
+   char imageFileName[100];
+   cout << "Enter the source image file name: ";
+   cin >> imageFileName;
+   strcat (imageFileName, ".bmp");
+   readGSBMP(imageFileName, image);
+}
+void loadImage2 () {
+   char imageFileName[100];
+   cout << "Enter the source image file name: ";
+   cin >> imageFileName;
+   strcat (imageFileName, ".bmp");
+   readGSBMP(imageFileName, image2);
+}
+void saveImage () {
+   char imageFileName[100];
+   cout << "Enter the target image file name: ";
+   cin >> imageFileName;
+   strcat (imageFileName, ".bmp");
+   writeGSBMP(imageFileName, image);
+}
 
 void black_white() {
   for (int i = 0; i < SIZE; i++) {
@@ -108,7 +132,7 @@ void rotateimage(){
         }
     }
 }
-DarkenandLighten(){
+void DarkenandLighten(){
   int filter;
     cout << "If you want darker filter enter 1 \nIf you want lighter filter enter 2:  \n";
     cin >>filter;
@@ -124,29 +148,13 @@ DarkenandLighten(){
         }
     }
 }
-
-         
-
-void loadImage () {
-   char imageFileName[100];
-   cout << "Enter the source image file name: ";
-   cin >> imageFileName;
-   strcat (imageFileName, ".bmp");
-   readGSBMP(imageFileName, image);
-}
-void loadImage2 () {
-   char imageFileName[100];
-   cout << "Enter the source image file name: ";
-   cin >> imageFileName;
-   strcat (imageFileName, ".bmp");
-   readGSBMP(imageFileName, image2);
-}
 void choosefilter (){ 
 
     int filterNumber;
-    cout<<"Please select a filter to apply or 0 to exit:";
-    cout<<"\n1- Black & White Filter \n2- Invert Filter\n3- Merge Filter \n4- Flip Image\n5- Rotate Image \n6- Darken and Lighten Image \n7- Save the image to a file\n0- Exit\n";
-    cin>>filterNumber;
+ while(true){
+  cout<<"Please select a filter to apply or 0 to exit:";
+  cout<<"\n1- Black & White Filter \n2- Invert Filter\n3- Merge Filter \n4- Flip Image\n5- Rotate Image \n6- Darken and Lighten Image \n7- Save the image to a file\n0- Exit\n";
+  cin>>filterNumber;
   if (filterNumber == 1)
   {
     black_white();
@@ -173,17 +181,10 @@ void choosefilter (){
   }
   else
   {
-    
+    break;
   }
-  
+    }
   }
-void saveImage () {
-   char imageFileName[100];
-   cout << "Enter the target image file name: ";
-   cin >> imageFileName;
-   strcat (imageFileName, ".bmp");
-   writeGSBMP(imageFileName, image);
-}
 
  
 
