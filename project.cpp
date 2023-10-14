@@ -148,12 +148,23 @@ void DarkenandLighten(){
         }
     }
 }
+void DetectImageEdges(){
+    for (int i = 0; i < SIZE; i++) {
+    for (int j = 0; j< SIZE; j++) {
+
+        if (image[i+1][j]-image[i][j]>=15 && image[i-1][j]-image[i][j]>=15 || image[i][j+1]-image[i][j]>=15 && image[i][j+1]-image[i][j]>=15)
+            image[i][j] = 0;
+        else
+            image[i][j] = 255;
+    }
+  }
+}
 void choosefilter (){ 
 
     int filterNumber;
  while(true){
   cout<<"Please select a filter to apply or 0 to exit:";
-  cout<<"\n1- Black & White Filter \n2- Invert Filter\n3- Merge Filter \n4- Flip Image\n5- Rotate Image \n6- Darken and Lighten Image \n7- Save the image to a file\n0- Exit\n";
+  cout<<"\n1- Black & White Filter \n2- Invert Filter\n3- Merge Filter \n4- Flip Image\n5- Rotate Image \n6- Darken and Lighten Image\n7-	Detect Image Edges \n8-	Enlarge Image\n9-	Shrink Image \n16- Save the image to a file\n0- Exit\n";
   cin>>filterNumber;
   if (filterNumber == 1)
   {
@@ -178,6 +189,10 @@ void choosefilter (){
   else if (filterNumber == 6)
   {
     DarkenandLighten();
+  }
+  else if (filterNumber == 7)
+  {
+    DetectImageEdges;
   }
   else
   {
