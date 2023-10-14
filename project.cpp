@@ -149,13 +149,13 @@ void DarkenandLighten(){
     }
 }
 void DetectImageEdges(){
-    for (int i = 0; i < SIZE; i++) {
+  for (int i = 0; i < SIZE; i++) {
     for (int j = 0; j< SIZE; j++) {
 
-        if (image[i+1][j]-image[i][j]>=15 && image[i-1][j]-image[i][j]>=15 || image[i][j+1]-image[i][j]>=15 && image[i][j+1]-image[i][j]>=15)
-            image[i][j] = 0;
-        else
+        if ( image[i+1][j] == image[i][j-1] && image[i][j+1] == image[i][j-1] || image[i+1][j] == image[i][j])
             image[i][j] = 255;
+        else
+            image[i][j] = 0;
     }
   }
 }
@@ -192,7 +192,8 @@ void choosefilter (){
   }
   else if (filterNumber == 7)
   {
-    DetectImageEdges;
+    black_white();
+    DetectImageEdges();
   }
   else
   {
