@@ -159,12 +159,63 @@ void DetectImageEdges(){
     }
   }
 }
+void MirrorImage(){
+  cout<<"Mirror (l)eft, (r)ight, (u)pper, (d)own side?";
+  char c;
+  cin>>c;  //to choose mirror side
+  int n=1;
+
+  switch (c)
+  {
+  case 'l':
+    for (int i = 0; i < SIZE; i++) {
+      for (int j = 128; j< SIZE; j++) {
+        n+=2;
+       image[i][j]=image[i][j-n];
+    }
+    n=1;
+  }
+    break;
+  
+  case 'r':
+    for (int i = 0; i < SIZE; i++) {
+      for (int j =0; j< SIZE/2; j++) {
+
+      image[i][j]=image[i][SIZE-j];
+    }
+  }
+    break;
+
+  case 'u':
+    for (int i = 128; i < SIZE; i++) {
+      for (int j = 0; j< SIZE; j++) {
+      
+         image[i][j]=image[i-n][j];
+    }
+      n+=2;
+  }
+    break;
+
+  case 'd':
+        for (int i = 0; i < SIZE/2; i++) {
+          for (int j =0; j< SIZE; j++) {
+
+           image[i][j]=image[SIZE-i][j];
+          }
+       }
+    break;
+  
+  default:
+    break;
+  }
+}
+
 void choosefilter (){ 
 
     int filterNumber;
  while(true){
   cout<<"Please select a filter to apply or 0 to exit:";
-  cout<<"\n1- Black & White Filter \n2- Invert Filter\n3- Merge Filter \n4- Flip Image\n5- Rotate Image \n6- Darken and Lighten Image\n7-	Detect Image Edges \n8-	Enlarge Image\n9-	Shrink Image \n16- Save the image to a file\n0- Exit\n";
+  cout<<"\n1- Black & White Filter \n2- Invert Filter\n3- Merge Filter \n4- Flip Image\n5- Rotate Image \n6- Darken and Lighten Image\n7- Detect Image Edges \n8- Enlarge Image\n9- Shrink Image \n10- Mirror 1/2 Image\n11- Shuffle Image\n12- Blur Image\n16- Save the image to a file\n0- Exit\n";
   cin>>filterNumber;
   if (filterNumber == 1)
   {
@@ -194,6 +245,18 @@ void choosefilter (){
   {
     black_white();
     DetectImageEdges();
+  }
+  else if (filterNumber == 8)
+  {
+ 
+  }
+  else if (filterNumber == 9)
+  {
+ 
+  }
+  else if (filterNumber ==10 )
+  {
+    MirrorImage();
   }
   else
   {
