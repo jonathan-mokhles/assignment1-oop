@@ -309,88 +309,6 @@ void Skew_Horizontally() {
     }
   }
 }
-
-void choosefilter (){ 
-
-    int filterNumber;
- while(true){
-  cout<<"Please select a filter to apply or 0 to exit:";
-  cout<<"\n1- Black & White Filter \n2- Invert Filter\n3- Merge Filter \n4- Flip Image\n5- Rotate Image \n6- Darken and Lighten Image\n7- Detect Image Edges \n8- Enlarge Image\n9- Shrink Image \n10- Mirror 1/2 Image\n11- Shuffle Image\n12- Blur Image\n13- Crop Image\n14- Save the image to a file\n0- Exit\n";
-  cin>>filterNumber;
-  if (filterNumber == 1)
-  {
-    black_white();
-  }
-  else if (filterNumber == 2)
-  {
-    InvertImage();
-  }
-  else if (filterNumber == 3)
-  {
-    MergeImage();
-  }
-  else if (filterNumber == 4)
-  {
-    flip();
-  }
-  else if (filterNumber == 5)
-  {
-    rotateimage();
-  }
-  else if (filterNumber == 6)
-  {
-    DarkenandLighten();
-  }
-  else if (filterNumber == 7)
-  {
-    DetectImageEdges();
-  }
-  else if (filterNumber == 8)
-  {
-   enlargimage();
-  }
-  else if (filterNumber == 9)
-  {
-    ShrinkImage ();
-  }
-  else if (filterNumber ==10 )
-  {
-    MirrorImage();
-  }
-  else if (filterNumber ==11 )
-  {
-   moveing();
-   shuffelimage();
-  }
-  else if (filterNumber ==12 )
-  {
-      BlurImage();
-  }
-  else if (filterNumber ==13 )
-  {
-    WhitePicture();
-    CropImage();
-  }
-  else if (filterNumber ==14 )
-  {
-     skewhorizontalh();
-  }
-   else if (filterNumber ==15 )
-  {
-     Skew_Horizontally();
-  }
-  else
-  {
-    break;
-  }
-    }
-  }
-
- using namespace std;
-unsigned char image[SIZE][SIZE];
-unsigned char new_image[SIZE][SIZE];
-
-
 void moveing (int quarter, int i, int j)
 {
 
@@ -489,7 +407,6 @@ void enlargimage ()
 
 }
 
-
 double skewhorizontalh ()
 {
     char h=1;
@@ -512,6 +429,83 @@ double skewhorizontalh ()
     
     
 }
+void choosefilter (){ 
+
+    int filterNumber;
+ while(true){
+  cout<<"Please select a filter to apply or 0 to exit:";
+  cout<<"\n1- Black & White Filter \n2- Invert Filter\n3- Merge Filter \n4- Flip Image\n5- Rotate Image \n6- Darken and Lighten Image\n7- Detect Image Edges \n8- Enlarge Image\n9- Shrink Image \n10- Mirror 1/2 Image\n11- Shuffle Image\n12- Blur Image\n13- Crop Image\n14-e- Skew Image Right  \n15- f- Skew Image Up  \n16- Save the image to a file\n0- Exit\n";
+  cin>>filterNumber;
+  if (filterNumber == 1)
+  {
+    black_white();
+  }
+  else if (filterNumber == 2)
+  {
+    InvertImage();
+  }
+  else if (filterNumber == 3)
+  {
+    MergeImage();
+  }
+  else if (filterNumber == 4)
+  {
+    flip();
+  }
+  else if (filterNumber == 5)
+  {
+    rotateimage();
+  }
+  else if (filterNumber == 6)
+  {
+    DarkenandLighten();
+  }
+  else if (filterNumber == 7)
+  {
+    DetectImageEdges();
+  }
+  else if (filterNumber == 8)
+  {
+   enlargimage();
+  }
+  else if (filterNumber == 9)
+  {
+    ShrinkImage ();
+  }
+  else if (filterNumber ==10 )
+  {
+    MirrorImage();
+  }
+  else if (filterNumber ==11 )
+  {
+   moveing();
+   shuffelimage();
+  }
+  else if (filterNumber ==12 )
+  {
+      BlurImage();
+  }
+  else if (filterNumber ==13 )
+  {
+    WhitePicture();
+    CropImage();
+  }
+  else if (filterNumber ==14 )
+  {
+     skewhorizontalh();
+  }
+   else if (filterNumber ==15 )
+  {
+     Skew_Horizontally();
+  }
+  else
+  {
+    break;
+  }
+    }
+  }
+
+
 
 
 int main(){
