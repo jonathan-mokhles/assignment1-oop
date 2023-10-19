@@ -345,7 +345,7 @@ void choosefilter (){
   }
   else if (filterNumber ==14 )
   {
-     skewhorizontalh(int step,int move);
+     skewhorizontalh();
   }
   else
   {
@@ -458,16 +458,16 @@ void enlargimage ()
 }
 
 
-double skewhorizontalh (int step,int move)
+double skewhorizontalh ()
 {
     char h=1;
     cout<<"please enter whate do you want we skew your new_image \n";
     cin>> h;
     if (h==1)
     {
-       for(int i=0; i<step;i++)
+       for(int i=0; i<SIZE;i++)
        {
-         for(int j=0; j<move;j++)
+         for(int j=0; j<SIZE;j++)
         
             image[i][(SIZE/2)+j-i]=image[i][j];
        }
