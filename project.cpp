@@ -349,7 +349,133 @@ void choosefilter (){
     }
   }
 
- 
+ using namespace std;
+unsigned char image[SIZE][SIZE];
+unsigned char new_image[SIZE][SIZE];
+
+
+void moveing (int quarter, int i, int j)
+{
+
+    int temp = j;
+    if (quarter==1)
+        for (int k=0; k < SIZE/2; i++,k++)
+        {
+            j=temp;
+            for(int z=0; z<SIZE/2; j++,z++)
+            new_image[i][j]=image[k][z];
+        }
+        
+            else if (quarter==2)
+
+                for(int k=0; k<SIZE/2;i++,k++)
+                {
+                    j=temp;
+                for(int z=0; z<SIZE/2; j++, z++) 
+                new_image[i][j]=image[k][z];
+
+                }
+                else if (quarter==3)
+
+                for(int k=0; k<SIZE/2; i++, k++)
+                {
+                    j=temp;
+                    for(int z=0; z<SIZE/2; j++, z++)
+                    new_image[i][j]=image[k][z];
+                }
+                else if (quarter==4)
+
+                for(int k=0; k<SIZE/2; i++, k++)
+                {
+                    j=temp;
+                    for(int z=0; z<SIZE/2; j++, z++)
+                    new_image[i][j]=image[k][z];
+                }
+                
+}
+
+void shuffelimage()
+{
+    int n;
+    cout<<"please enter the quarter: \n";
+    for(int i=0; i<4; i++)
+    {
+         cin>> n;
+         if (i==0)
+            moveing(n,0,0);
+         else if (i==1)
+            moveing (n,0,SIZE/2) ;
+         else if (i==2)
+            moveing (n,SIZE/2,0);
+         else if (i==3)
+            moveing (n,SIZE/2,SIZE/2);                 
+    }
+   
+
+
+}
+
+void enlargimage ()
+{
+    int n;
+    cout<< "please enter whate is your qyarter you want enlarge \n";
+    cin>> n;
+    for(int i=0 ;i<SIZE;i++)
+    {
+        for(int j=0; j<SIZE; j++)
+        {
+         
+           if (n==1)
+           {
+                new_image[i][j]=image[i/2][j/2];
+           }
+            
+            else if (n==2)
+            {
+            new_image[i][j]=image[i/2][SIZE/2 + j/2];
+            }
+            else if (i==3)
+            {
+            new_image[i][j]=image[SIZE/2 + i/2][j/2] ;   
+            }
+            else if (i==4)
+            {
+            new_image[i][j]=image[SIZE/2 + i/2][SIZE/2 + j/2];
+            }
+
+        }
+
+        
+    }
+
+
+
+}
+
+
+double skewhorizontalh (int step,int move)
+{
+    char h=1;
+    cout<<"please enter whate do you want we skew your new_image \n";
+    cin>> h;
+    if (h==1)
+    {
+       for(int i=0; i<step;i++)
+       {
+         for(int j=0; j<move;j++)
+        
+            new_image[i][(SIZE/2)+j-i]=image[i][j];
+       }
+    }
+    else
+    {
+        h!=1;
+        cout<<"please check whate you enter \n"; 
+    }
+    
+    
+}
+
 
 int main(){
 
