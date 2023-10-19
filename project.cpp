@@ -282,6 +282,34 @@ void WhitePicture () {
         }
     }
 }
+void Skew_Horizontally() {
+
+  int x=256;
+  for (int i = 0; i < SIZE; i++) {
+    x--;
+    for (int j = 0; j< SIZE; j++) {
+       
+      image[i][(j+x)/2] = image[i][j];
+    }
+  }
+  int num=0;
+  for (int i = 0; i < SIZE; i++) {
+    if (i%2){num +=1;}
+    for (int j = 0; j< (126-num); j++) {
+    
+      image[i][j] = 256;
+    }
+  }
+  num=0;
+  for (int i = 0; i < SIZE; i++) {
+    if (i%2){num +=1;}
+    for (int j = (SIZE-num); j< SIZE; j++) {
+    
+      image[i][j] = 256;
+    }
+  }
+}
+
 void choosefilter (){ 
 
     int filterNumber;
@@ -346,6 +374,10 @@ void choosefilter (){
   else if (filterNumber ==14 )
   {
      skewhorizontalh();
+  }
+   else if (filterNumber ==15 )
+  {
+     Skew_Horizontally();
   }
   else
   {
