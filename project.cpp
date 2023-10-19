@@ -110,15 +110,15 @@ void rotateimage(){
                
                 if (number ==90)
                     {
-                  new_image[255-j][255-i]=image[i][255-j]; 
+                  image[255-j][255-i]=image[i][255-j]; 
                     }
                    else if (number ==180)
                    {
-                    new_image [255-i][255-j]=image[i][j];
+                    image [255-i][255-j]=image[i][j];
                    }
                     else if (number ==270)
                     {
-                        new_image[255-j][i]=image[i][j];
+                        image[255-j][i]=image[i][j];
                     }
 
 
@@ -368,7 +368,7 @@ void moveing (int quarter, int i, int j)
         {
             j=temp;
             for(int z=0; z<SIZE/2; j++,z++)
-            new_image[i][j]=image[k][z];
+            image[i][j]=image[k][z];
         }
         
             else if (quarter==2)
@@ -377,7 +377,7 @@ void moveing (int quarter, int i, int j)
                 {
                     j=temp;
                 for(int z=0; z<SIZE/2; j++, z++) 
-                new_image[i][j]=image[k][z];
+                image[i][j]=image[k][z];
 
                 }
                 else if (quarter==3)
@@ -386,7 +386,7 @@ void moveing (int quarter, int i, int j)
                 {
                     j=temp;
                     for(int z=0; z<SIZE/2; j++, z++)
-                    new_image[i][j]=image[k][z];
+                    image[i][j]=image[k][z];
                 }
                 else if (quarter==4)
 
@@ -394,7 +394,7 @@ void moveing (int quarter, int i, int j)
                 {
                     j=temp;
                     for(int z=0; z<SIZE/2; j++, z++)
-                    new_image[i][j]=image[k][z];
+                    image[i][j]=image[k][z];
                 }
                 
 }
@@ -432,20 +432,20 @@ void enlargimage ()
          
            if (n==1)
            {
-                new_image[i][j]=image[i/2][j/2];
+                image[i][j]=image[i/2][j/2];
            }
             
             else if (n==2)
             {
-            new_image[i][j]=image[i/2][SIZE/2 + j/2];
+            image[i][j]=image[i/2][SIZE/2 + j/2];
             }
             else if (i==3)
             {
-            new_image[i][j]=image[SIZE/2 + i/2][j/2] ;   
+            image[i][j]=image[SIZE/2 + i/2][j/2] ;   
             }
             else if (i==4)
             {
-            new_image[i][j]=image[SIZE/2 + i/2][SIZE/2 + j/2];
+            image[i][j]=image[SIZE/2 + i/2][SIZE/2 + j/2];
             }
 
         }
@@ -469,7 +469,7 @@ double skewhorizontalh (int step,int move)
        {
          for(int j=0; j<move;j++)
         
-            new_image[i][(SIZE/2)+j-i]=image[i][j];
+            image[i][(SIZE/2)+j-i]=image[i][j];
        }
     }
     else
