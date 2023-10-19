@@ -479,7 +479,7 @@ void choosefilter (){
   }
   else if (filterNumber ==11 )
   {
-   moveing(  int quarter, int i,intj);
+  
    shuffelimage();
   }
   else if (filterNumber ==12 )
