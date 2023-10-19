@@ -319,7 +319,7 @@ void choosefilter (){
   }
   else if (filterNumber == 8)
   {
- 
+   enlargimage();
   }
   else if (filterNumber == 9)
   {
@@ -331,7 +331,8 @@ void choosefilter (){
   }
   else if (filterNumber ==11 )
   {
-
+   moveing();
+   shuffelimage();
   }
   else if (filterNumber ==12 )
   {
@@ -341,6 +342,10 @@ void choosefilter (){
   {
     WhitePicture();
     CropImage();
+  }
+  else if (filterNumber ==14 )
+  {
+     skewhorizontalh();
   }
   else
   {
