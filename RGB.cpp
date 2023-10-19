@@ -1,6 +1,5 @@
 // FCI – OOP – 2023 - Assignment 1
-// Program Name: photoshop.cpp
-// Author1 and ID and Group: Ahmed Mohammed Ahmed Sadek   20210029
+// Author1 and ID and Group: Ahmed Mohammed Ahmed Sadek   20210029   asadq265@gmail.com
 // Author2 and ID and Group: 
 // Author3 and ID and Group: 
 
