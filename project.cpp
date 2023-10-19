@@ -162,6 +162,42 @@ void DetectImageEdges(){
             }
         }
 }
+void ShrinkImage () {
+    int operation;
+    cout<<"please choose what you want"<<endl;
+    cout<<"enter 1 to shrink the image to 1/2"<<endl;
+    cout<<"enter 2 to shrink the image to 1/3"<<endl;
+    cout<<"enter 3 to shrink the image to 1/4"<<endl;
+    cin>>operation;
+
+    if(operation==1){
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j< SIZE; j++) {
+                image[i/2][j/2]=image[i][j];
+            }
+        }
+    }
+    else if(operation==2){
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j< SIZE; j++) {
+                image[i/3][j/3]=image[i][j];
+            }
+        }
+    }
+    else if(operation==3){
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j< SIZE; j++) {
+                image[i/4][j/4]=image[i][j];
+            }
+        }
+    }
+    else{
+        cin.clear();
+        cin.ignore();
+        cout<<"\nenter agian and correct 1 or 2 or 3 : \n\n ";
+        ShrinkImage ();
+    }
+}
 void MirrorImage(){
   cout<<"Mirror (l)eft, (r)ight, (u)pper, (d)own side?";
   char c;
@@ -211,6 +247,14 @@ void MirrorImage(){
   default:
     break;
   }
+}
+void BlurImage() {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j< SIZE; j++) {
+
+           image[i][j] = (image[i][j]+image[i+1][j]+image[i-1][j]+image[i+1][j+1]+image[i-1][j-1]+image[i][j+1]+image[i][j-1]+image[i+1][j-1]+image[i-1][j+1]+image[i+2][j+2]+image[i+2][j]+image[i][j+2]+image[i-2][j]+image[i][j-2]+image[i+2][j-2]+image[i-2][j+2])/16;
+        }
+    }
 }
 void CropImage(){
       cout<<"Please enter x y l w: ";
@@ -279,7 +323,7 @@ void choosefilter (){
   }
   else if (filterNumber == 9)
   {
- 
+    ShrinkImage ();
   }
   else if (filterNumber ==10 )
   {
@@ -291,7 +335,7 @@ void choosefilter (){
   }
   else if (filterNumber ==12 )
   {
-
+      BlurImage();
   }
   else if (filterNumber ==13 )
   {
