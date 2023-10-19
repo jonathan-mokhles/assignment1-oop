@@ -1,7 +1,8 @@
-// FCI – OOP – 2023 - Assignment 1
-// Author1 and ID and Group: Ahmed Mohammed Ahmed Sadek   20210029   asadq265@gmail.com
-// Author2 and ID and Group: 
-// Author3 and ID and Group: 
+// FCAI – OOP Programming – 2023 - Assignment 1 
+
+//AHMED MOHAMED AHMED >> asadq265@gmail.com >> 20210029
+//JONATHAN MOKHLES >> jonathanmokhles@gmail.com >> 20220100
+//AHMED RIZQ MOHAMED >> arizq9941@gmail.com >> 20210017
 
 #include <iostream>
 #include <fstream>
