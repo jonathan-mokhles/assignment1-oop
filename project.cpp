@@ -478,7 +478,7 @@ void choosefilter (){
   }
   else if (filterNumber ==11 )
   {
-   moveing();
+   moveing( quarter,  i,j);
    shuffelimage();
   }
   else if (filterNumber ==12 )
