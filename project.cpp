@@ -149,8 +149,8 @@ void DarkenandLighten(){
     }
 }
 void DetectImageEdges(){
-    for (int r = 0; i < SIZE; r++) {
-        for (int c = 0; j < SIZE; c++) {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
 
                 if (abs(image[i][j] - image[i][j + 1] > 15)) {
 
@@ -212,13 +212,38 @@ void MirrorImage(){
     break;
   }
 }
+void CropImage(){
+      cout<<"Please enter x y l w: ";
+   int x,y,l,w;
+   cin>>x>>y>>l>>w;
+      for (int i = y; i < l+y; i++) {
+        for (int j = x; j < w+x; j++) {
 
+           new_image[i][j]=image[i][j];
+        }
+    }
+    //copying the image to "image" arry to save it
+      for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+
+           image[i][j]=new_image[i][j];
+        }
+    }
+}
+void WhitePicture () {
+           for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+
+          new_image[i][j]=255;
+        }
+    }
+}
 void choosefilter (){ 
 
     int filterNumber;
  while(true){
   cout<<"Please select a filter to apply or 0 to exit:";
-  cout<<"\n1- Black & White Filter \n2- Invert Filter\n3- Merge Filter \n4- Flip Image\n5- Rotate Image \n6- Darken and Lighten Image\n7- Detect Image Edges \n8- Enlarge Image\n9- Shrink Image \n10- Mirror 1/2 Image\n11- Shuffle Image\n12- Blur Image\n16- Save the image to a file\n0- Exit\n";
+  cout<<"\n1- Black & White Filter \n2- Invert Filter\n3- Merge Filter \n4- Flip Image\n5- Rotate Image \n6- Darken and Lighten Image\n7- Detect Image Edges \n8- Enlarge Image\n9- Shrink Image \n10- Mirror 1/2 Image\n11- Shuffle Image\n12- Blur Image\n13- Crop Image\n14- Save the image to a file\n0- Exit\n";
   cin>>filterNumber;
   if (filterNumber == 1)
   {
@@ -259,6 +284,19 @@ void choosefilter (){
   else if (filterNumber ==10 )
   {
     MirrorImage();
+  }
+  else if (filterNumber ==11 )
+  {
+
+  }
+  else if (filterNumber ==12 )
+  {
+
+  }
+  else if (filterNumber ==13 )
+  {
+    WhitePicture();
+    CropImage();
   }
   else
   {
