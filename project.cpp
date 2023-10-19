@@ -313,6 +313,7 @@ void moveing (int quarter, int i, int j)
 {
 
     int temp = j;
+   cin>> quarter;
     if (quarter==1)
         for (int k=0; k < SIZE/2; i++,k++)
         {
