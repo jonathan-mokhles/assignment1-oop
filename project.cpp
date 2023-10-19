@@ -149,15 +149,18 @@ void DarkenandLighten(){
     }
 }
 void DetectImageEdges(){
-  for (int i = 0; i < SIZE; i++) {
-    for (int j = 0; j< SIZE; j++) {
+    for (int r = 0; i < SIZE; r++) {
+        for (int c = 0; j < SIZE; c++) {
 
-        if ( image[i+1][j] == image[i][j-1] && image[i][j+1] == image[i][j-1] || image[i+1][j] == image[i][j])
-            image[i][j] = 255;
-        else
-            image[i][j] = 0;
-    }
-  }
+                if (abs(image[i][j] - image[i][j + 1] > 15)) {
+
+                     image[i][j] = 0;
+
+                } else {
+                     image[i][j] = 255;
+                }
+            }
+        }
 }
 void MirrorImage(){
   cout<<"Mirror (l)eft, (r)ight, (u)pper, (d)own side?";
@@ -243,7 +246,6 @@ void choosefilter (){
   }
   else if (filterNumber == 7)
   {
-    black_white();
     DetectImageEdges();
   }
   else if (filterNumber == 8)
