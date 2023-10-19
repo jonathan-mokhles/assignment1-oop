@@ -345,7 +345,7 @@ void choosefilter (){
   }
   else if (filterNumber ==14 )
   {
-     skewhorizontalh();
+     skewhorizontalh(int step,int move);
   }
   else
   {
